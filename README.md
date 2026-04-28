@@ -6,13 +6,18 @@ A responsive multi-page website for a fictional dental clinic, built as a front-
 
 ## Live Demo
 
-> _Coming soon — deploy link will be added here_
+https://p1nkers.github.io/DentaCare_Project/
 
 ---
 
 ## Screenshots
 
-> _Add screenshots of the main pages here_
+<img width="1854" height="908" alt="image" src="https://github.com/user-attachments/assets/40a8a19d-b287-45b8-ad6b-75dc8f5191f0" />
+
+<img width="1821" height="826" alt="image" src="https://github.com/user-attachments/assets/dde26045-b41d-4e2b-9169-bef097d8d823" />
+
+<img width="452" height="767" alt="image" src="https://github.com/user-attachments/assets/4b440c76-053f-492d-ba64-9728ad09b504" />
+
 
 ---
 
