@@ -1,6 +1,6 @@
 # DentaCare — Dental Clinic Website
 
-A responsive multi-page website for a fictional dental clinic, built as a front-end learning project and portfolio piece.
+A responsive multi-page simple website for a fictional dental clinic, built as a front-end learning project and portfolio piece.
 
 ---
 
@@ -74,14 +74,18 @@ dentacare/
 
 ## Getting Started
 
+### Live demo
+The site is deployed and available at github pages:
+**https://p1nkers.github.io/DentaCare_Project/**
+
+### Run locally
+
 No installation or build step required.
 
 **Option 1 — Open directly:**
-```
-Open index.html in any modern browser.
-```
+Open `index.html` in any modern browser.
 
-**Option 2 — Local dev server (recommended for consistent behavior):**
+**Option 2 — Local dev server (recommended):**
 
 Using the [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) VS Code extension:
 1. Open the project folder in VS Code
@@ -91,7 +95,6 @@ Or with Node.js:
 ```bash
 npx serve .
 ```
-
 Then open `http://localhost:3000` in your browser.
 
 ---
@@ -110,8 +113,8 @@ Then open `http://localhost:3000` in your browser.
 
 **Stanislav** — front-end learner building portfolio projects.
 
-- GitHub: [@stasfox333](https://github.com/stasfox333)
-- Email: stasfox333999333@gmail.com
+- GitHub: [@P1nkerS](https://github.com/P1nkerS)
+- Email: DelovoyAnonimus@gmail.com
 
 ---
 
