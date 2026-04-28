@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Адрес, телефон и режим работы стоматологической клиники DentaCare. г. Москва, ул. Тверская, д. 15. Запись онлайн.">
+  <title>Контакты — DentaCare | Стоматология в Москве</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="canonical" href="https://dentacare.ru/contacts.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="DentaCare">
+  <meta property="og:locale"      content="ru_RU">
+  <meta property="og:url"         content="https://dentacare.ru/contacts.html">
+  <meta property="og:title"       content="Контакты — DentaCare | Москва, Тверская 15">
+  <meta property="og:description" content="Адрес: г. Москва, ул. Тверская, д. 15. Телефон: +7 (495) 123-45-67. Работаем ежедневно 8:00–21:00.">
+  <meta property="og:image"       content="https://dentacare.ru/assets/img/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@dentacare">
+  <meta name="twitter:title"       content="Контакты — DentaCare | Москва, Тверская 15">
+  <meta name="twitter:description" content="Адрес: г. Москва, ул. Тверская, д. 15. Телефон: +7 (495) 123-45-67. Работаем ежедневно 8:00–21:00.">
+  <meta name="twitter:image"       content="https://dentacare.ru/assets/img/og-image.jpg">
+
+  <style>
+    
+    /* ================================================================
+       Footer component styles
+       ================================================================ */
+
+    .site-footer {
+      background: var(--color-primary);
+      color: rgba(255,255,255,0.85);
+      padding: var(--space-4xl) 0 0;
+      margin-top: auto;
+    }
+    .site-footer__grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.3fr;
+      gap: var(--space-3xl);
+      padding-bottom: var(--space-3xl);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .footer-col__heading {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: var(--space-lg);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .footer-brand__logo {
+      display: inline-flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+      margin-bottom: var(--space-md);
+    }
+    .footer-brand__name {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .footer-brand__name span { color: var(--color-accent); }
+    .footer-brand__tagline {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .footer-brand__desc {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: var(--space-lg);
+      max-width: 300px;
+    }
+    .footer-social {
+      display: flex;
+      gap: var(--space-sm);
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .footer-social__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-social__link:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    .footer-nav__list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .footer-nav__list a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 6px 0;
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color var(--transition), gap var(--transition);
+    }
+    .footer-nav__list a::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .footer-nav__list a:hover { color: #fff; gap: var(--space-md); }
+    .footer-nav__list a:hover::before { opacity: 1; }
+
+    .footer-contacts__list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .footer-contacts__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+    .footer-contacts__item svg { flex-shrink: 0; margin-top: 2px; color: var(--color-accent); }
+    .footer-contacts__item a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color var(--transition); }
+    .footer-contacts__item a:hover { color: #fff; }
+    .footer-contacts__hours { display: flex; flex-direction: column; gap: 2px; }
+    .footer-contacts__hours span:first-child { color: #fff; font-weight: 600; }
+
+    .footer-bottom { padding: var(--space-lg) 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-bottom__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+    .footer-bottom__copy { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+    .footer-bottom__links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .footer-bottom__links a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
+    .footer-bottom__links a:hover { color: rgba(255,255,255,0.9); }
+
+    .footer-disclaimer { background: rgba(0,0,0,0.2); padding: var(--space-md) 0; text-align: center; }
+    .footer-disclaimer p { font-size: 0.8125rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+    body.visually-impaired .site-footer { background: #000; border-top: 2px solid #FFD700; }
+    body.visually-impaired .footer-bottom { border-top-color: rgba(255,215,0,0.3); }
+    body.visually-impaired .footer-disclaimer { background: #111; }
+    body.visually-impaired .footer-social__link:hover { background: #FFD700; color: #000; border-color: #FFD700; }
+
+    /* ================================================================
+       Page-specific styles — contacts.html
+       ================================================================ */
+
+    /* ── Page Hero ──────────────────────────────────────────── */
+    .page-hero {
+      background: var(--color-primary);
+      padding: 60px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; right: -5%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(34,197,160,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .page-hero__inner { position: relative; }
+    .page-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .page-hero__subtitle {
+      font-size: 1.0625rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+      max-width: 560px;
+    }
+
+    /* ── Breadcrumbs (dark bg) ──────────────────────────────── */
+    .breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+      font-size: 0.875rem;
+    }
+    .breadcrumbs li { display: flex; align-items: center; gap: 8px; }
+    .breadcrumbs li::after {
+      content: '›';
+      color: rgba(255,255,255,0.4);
+      font-size: 1rem;
+    }
+    .breadcrumbs li:last-child::after { display: none; }
+    .breadcrumbs a {
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .breadcrumbs a:hover { color: #fff; }
+    .breadcrumbs li:last-child span { color: rgba(255,255,255,0.9); }
+
+    /* ── Contacts + Map section ─────────────────────────────── */
+    .contacts-section { padding: 80px 0; }
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Contact info blocks */
+    .contact-block {
+      display: flex;
+      gap: 16px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background: var(--color-surface);
+      margin-bottom: 16px;
+    }
+    .contact-block:last-child { margin-bottom: 0; }
+    .contact-block__icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .contact-block__body { min-width: 0; }
+    .contact-block__title {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+    .contact-block__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+    }
+    .contact-block__text a {
+      color: var(--color-accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity var(--transition);
+    }
+    .contact-block__text a:hover { opacity: 0.8; }
+    .contact-block__note {
+      display: block;
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      margin-top: 4px;
+    }
+
+    /* Hours table */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+    .hours-table td { padding: 4px 0; color: var(--color-text-muted); }
+    .hours-table td:first-child { font-weight: 600; color: var(--color-text); width: 100px; }
+
+    /* Open badge */
+    .open-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: #22C5A0;
+      color: #fff;
+      border-radius: 20px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+    }
+    .open-badge::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #fff;
+      animation: blink 1.5s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* Map wrapper */
+    .map-wrapper { position: relative; }
+    .map-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+    .map-wrapper__action {
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    /* ── Contact Form section ───────────────────────────────── */
+    .form-section { padding: 80px 0; background: var(--color-surface); }
+    .form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* Left side */
+    .form-info__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .form-info__subtitle {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+    .form-info__phone {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+      margin-bottom: 28px;
+      transition: color var(--transition);
+    }
+    .form-info__phone:hover { color: var(--color-accent); }
+    .form-info__facts {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .form-info__fact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+    .form-info__check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Form card */
+    .form-card {
+      background: #fff;
+      padding: 40px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+    .form-card__title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+    }
+
+    .form-field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-field:last-of-type { margin-bottom: 0; }
+    .form-field label { font-size: 0.875rem; font-weight: 600; color: var(--color-text); }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      padding: 12px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      background: #fff;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      width: 100%;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(34,197,160,0.15);
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: var(--color-text-muted); }
+    .form-field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+    .form-field textarea { resize: vertical; min-height: 108px; }
+
+    .form-consent {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin: 20px 0;
+    }
+    .form-consent input[type="checkbox"] {
+      width: 18px; height: 18px;
+      accent-color: var(--color-accent);
+      flex-shrink: 0;
+      cursor: pointer;
+      margin-top: 2px;
+    }
+    .form-consent a { color: var(--color-accent); text-decoration: underline; transition: opacity var(--transition); }
+    .form-consent a:hover { opacity: 0.8; }
+
+    .form-card .btn-primary { width: 100%; text-align: center; justify-content: center; padding: 15px; }
+
+    body.visually-impaired .contact-block { background: #111; border: 1px solid #333; }
+    body.visually-impaired .contact-block__title { color: #FFD700; }
+    body.visually-impaired .form-section { background: #000; }
+    body.visually-impaired .form-card { background: #111; border: 1px solid #333; }
+    body.visually-impaired .form-field input,
+    body.visually-impaired .form-field select,
+    body.visually-impaired .form-field textarea { background: #1a1a1a; border-color: #444; color: #fff; }
+    body.visually-impaired .form-field label { color: #ccc; }
+    body.visually-impaired .open-badge { background: #1aad8c; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Topbar ─────────────────────────────────────────────── -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <div class="topbar__contacts">
+          <a href="#" class="topbar__address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            г. Москва, ул. Тверская, д. 15
+          </a>
+          <a href="tel:+74951234567">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +7 (495) 123-45-67
+          </a>
+        </div>
+        <button id="accessibility-toggle" class="topbar__accessibility" type="button" aria-pressed="false" aria-label="Включить версию для слабовидящих">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/><path d="M2 12S5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z"/>
+          </svg>
+          Версия для слабовидящих
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main Header ────────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="index.html" class="logo" aria-label="DentaCare — на главную">
+          <span class="logo__name">Denta<span>Care</span></span>
+          <span class="logo__tagline">Стоматологическая клиника</span>
+        </a>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <ul class="main-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="doctors.html">Врачи</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="contacts.html" class="active">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__cta">
+          <a href="contacts.html" class="btn-primary">Записаться</a>
+        </div>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Мобильная навигация" hidden>
+      <div class="container">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="doctors.html">Врачи</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="contacts.html" class="active">Контакты</a></li>
+        </ul>
+        <div class="mobile-menu__cta">
+          <a href="contacts.html" class="btn-primary">Записаться на приём</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  PAGE HERO                                             -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="page-hero" aria-label="Заголовок страницы">
+      <div class="container">
+        <div class="page-hero__inner">
+          <ol class="breadcrumbs" aria-label="Навигационная цепочка">
+            <li><a href="index.html">Главная</a></li>
+            <li><span>Контакты</span></li>
+          </ol>
+          <h1 class="page-hero__title">Контакты</h1>
+          <p class="page-hero__subtitle">Мы находимся в центре Москвы — удобно добраться на метро и автомобиле</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  КОНТАКТЫ + КАРТА                                      -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="contacts-section" aria-labelledby="contacts-title">
+      <div class="container">
+        <div class="contacts-grid">
+
+          <!-- Left: info blocks -->
+          <div class="contacts-info">
+
+            <!-- Address -->
+            <div class="contact-block">
+              <div class="contact-block__icon" aria-hidden="true"><i data-lucide="map-pin"></i></div>
+              <div class="contact-block__body">
+                <div class="contact-block__title">Адрес</div>
+                <div class="contact-block__text">
+                  г. Москва, ул. Тверская, д. 15
+                  <span class="contact-block__note">Метро: Тверская, Пушкинская (5 минут пешком)</span>
+                  <a href="#" style="display:inline-block;margin-top:8px;">Построить маршрут →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-block">
+              <div class="contact-block__icon" aria-hidden="true"><i data-lucide="phone"></i></div>
+              <div class="contact-block__body">
+                <div class="contact-block__title">Телефон</div>
+                <div class="contact-block__text">
+                  <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                  <span class="contact-block__note">Звонки принимаем ежедневно с 8:00 до 21:00</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-block">
+              <div class="contact-block__icon" aria-hidden="true"><i data-lucide="mail"></i></div>
+              <div class="contact-block__body">
+                <div class="contact-block__title">Email</div>
+                <div class="contact-block__text">
+                  <a href="mailto:info@dentacare.ru">info@dentacare.ru</a>
+                  <span class="contact-block__note">Отвечаем в течение 2 часов в рабочее время</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Working hours -->
+            <div class="contact-block">
+              <div class="contact-block__icon" aria-hidden="true"><i data-lucide="clock"></i></div>
+              <div class="contact-block__body">
+                <div class="contact-block__title">Режим работы</div>
+                <div class="contact-block__text">
+                  <table class="hours-table" aria-label="Расписание работы">
+                    <tbody>
+                      <tr>
+                        <td>Пн–Пт</td>
+                        <td>8:00 — 21:00</td>
+                      </tr>
+                      <tr>
+                        <td>Сб–Вс</td>
+                        <td>9:00 — 19:00</td>
+                      </tr>
+                      <tr>
+                        <td>Праздники</td>
+                        <td>10:00 — 17:00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <span id="work-status-badge" class="open-badge" aria-label="Статус работы клиники">Сейчас открыто</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Legal info -->
+            <div class="contact-block">
+              <div class="contact-block__icon" aria-hidden="true"><i data-lucide="file-text"></i></div>
+              <div class="contact-block__body">
+                <div class="contact-block__title">Реквизиты</div>
+                <div class="contact-block__text">
+                  ООО «ДентаКэр»<br>
+                  ИНН: 7701234567<br>
+                  ОГРН: 1037700123456<br>
+                  Лицензия Росздравнадзора: ЛО-77-01-019876 от 15.03.2021
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: map -->
+          <div class="map-wrapper">
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?ll=37.60122%2C55.76498&z=16&pt=37.60122,55.76498,pm2rdm&text=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C+%D1%83%D0%BB.+%D0%A2%D0%B2%D0%B5%D1%80%D1%81%D0%BA%D0%B0%D1%8F%2C+15"
+              width="100%"
+              height="450"
+              style="border:0; border-radius: var(--radius-md);"
+              allowfullscreen="true"
+              loading="lazy"
+              title="Карта проезда к клинике DentaCare"
+            ></iframe>
+            <div class="map-wrapper__action">
+              <a
+                href="https://yandex.ru/maps/?text=Москва+Тверская+15"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline"
+              >Открыть в Яндекс.Картах</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  ФОРМА ОБРАТНОЙ СВЯЗИ                                  -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="form-section" aria-labelledby="form-title">
+      <div class="container">
+        <div class="form-layout">
+
+          <!-- Left: text info -->
+          <div class="form-info">
+            <h2 class="form-info__title" id="form-title">Напишите нам</h2>
+            <p class="form-info__subtitle">Ответим в течение 2 часов в рабочее время. Или позвоните — это быстрее.</p>
+            <a href="tel:+74951234567" class="form-info__phone">+7 (495) 123-45-67</a>
+            <ul class="form-info__facts" role="list">
+              <li class="form-info__fact">
+                <span class="form-info__check" aria-hidden="true">✓</span>
+                Бесплатная первичная консультация
+              </li>
+              <li class="form-info__fact">
+                <span class="form-info__check" aria-hidden="true">✓</span>
+                Перезвоним в ближайшее время
+              </li>
+              <li class="form-info__fact">
+                <span class="form-info__check" aria-hidden="true">✓</span>
+                Работаем без выходных
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: form card -->
+          <div class="form-card">
+            <h3 class="form-card__title">Отправить сообщение</h3>
+            <form action="#" method="post" novalidate>
+
+              <div class="form-field">
+                <label for="c-name">Имя <span aria-hidden="true" style="color:var(--color-accent)">*</span></label>
+                <input type="text" id="c-name" name="name" placeholder="Иван Иванов" autocomplete="given-name" required>
+              </div>
+
+              <div class="form-field">
+                <label for="c-phone">Телефон <span aria-hidden="true" style="color:var(--color-accent)">*</span></label>
+                <input type="tel" id="c-phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+              </div>
+
+              <div class="form-field">
+                <label for="c-email">Email</label>
+                <input type="email" id="c-email" name="email" placeholder="example@mail.ru" autocomplete="email">
+              </div>
+
+              <div class="form-field">
+                <label for="c-subject">Тема</label>
+                <select id="c-subject" name="subject">
+                  <option value="" disabled selected>Выберите тему</option>
+                  <option value="appointment">Запись на приём</option>
+                  <option value="services">Вопрос по услугам</option>
+                  <option value="feedback">Жалоба или предложение</option>
+                  <option value="other">Другое</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="c-message">Сообщение</label>
+                <textarea id="c-message" name="message" rows="4" placeholder="Опишите ваш вопрос или пожелание..."></textarea>
+              </div>
+
+              <div class="form-consent">
+                <input type="checkbox" id="c-consent" name="consent" required>
+                <label for="c-consent">
+                  Я согласен(а) на обработку
+                  <a href="privacy.html">персональных данных</a>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-primary">Отправить сообщение</button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-brand__logo" aria-label="DentaCare — на главную">
+            <span class="footer-brand__name">Denta<span>Care</span></span>
+            <span class="footer-brand__tagline">Стоматологическая клиника</span>
+          </a>
+          <p class="footer-brand__desc">Современная стоматология с заботой о каждом пациенте. Профессиональное лечение, протезирование и эстетическая стоматология в Москве с 2001 года.</p>
+          <ul class="footer-social" aria-label="Социальные сети">
+            <li>
+              <a href="#" class="footer-social__link" aria-label="ВКонтакте">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.06 13.29h-1.52c-.58 0-.76-.46-1.8-1.52-.91-.88-1.31-.99-1.53-.99-.31 0-.4.09-.4.52v1.39c0 .37-.12.59-1.1.59-1.62 0-3.41-.98-4.67-2.8C5.62 10.4 5 8.4 5 7.91c0-.22.09-.43.52-.43h1.52c.39 0 .54.18.69.61.76 2.19 2.02 4.11 2.54 4.11.2 0 .28-.09.28-.58V9.48c-.06-1.04-.61-1.13-.61-1.5 0-.18.15-.37.39-.37h2.39c.33 0 .45.18.45.55v2.97c0 .33.15.45.24.45.2 0 .37-.12.74-.49 1.14-1.28 1.96-3.24 1.96-3.24.11-.22.28-.43.67-.43h1.52c.46 0 .56.24.46.55-.19.89-2.03 3.47-2.03 3.47-.16.26-.22.37 0 .66.16.22.69.67 1.04 1.08.65.73 1.14 1.34 1.27 1.76.12.42-.09.64-.52.64z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-social__link" aria-label="Telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.43 13.9l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.723.659z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-social__link" aria-label="WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="footer-col" aria-label="Навигация по сайту">
+          <h3 class="footer-col__heading">Навигация</h3>
+          <ul class="footer-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="doctors.html">Врачи</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-col" style="font-style: normal;">
+          <h3 class="footer-col__heading">Контакты</h3>
+          <ul class="footer-contacts__list">
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>г. Москва, ул. Тверская, д. 15</span>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:info@dentacare.ru">info@dentacare.ru</a>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div class="footer-contacts__hours">
+                <span>Пн–Вс: 8:00 — 21:00</span>
+                <span>Без выходных</span>
+              </div>
+            </li>
+          </ul>
+        </address>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__inner">
+          <p class="footer-bottom__copy">© 2026 DentaCare. Все права защищены.</p>
+          <ul class="footer-bottom__links">
+            <li><a href="privacy.html">Политика конфиденциальности</a></li>
+            <li><a href="#">Лицензии</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer" role="note">
+      <div class="container">
+        <p>Имеются противопоказания. Необходима консультация специалиста.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Уведомление о cookies" hidden>
+    <div class="cookie-banner__inner container">
+      <div class="cookie-banner__text">
+        <strong>Мы используем cookies</strong>
+        <p>Сайт использует cookies для улучшения работы и анализа трафика.
+        Продолжая использовать сайт, вы соглашаетесь с
+        <a href="privacy.html#cookies">политикой использования cookies</a>.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button id="cookie-accept" class="btn-primary" type="button">Принять</button>
+        <button id="cookie-decline" class="btn-outline" type="button">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
+
+</body>
+</html>

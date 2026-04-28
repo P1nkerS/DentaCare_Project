@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Подробное руководство по правильной чистке зубов от стоматологов DentaCare. Техника, время, выбор щётки и пасты.">
+  <title>Как правильно чистить зубы: полное руководство — DentaCare</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="canonical" href="https://dentacare.ru/blog-post.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"              content="article">
+  <meta property="og:site_name"         content="DentaCare">
+  <meta property="og:locale"            content="ru_RU">
+  <meta property="og:url"               content="https://dentacare.ru/blog-post.html">
+  <meta property="og:title"             content="Как правильно чистить зубы: полное руководство — DentaCare">
+  <meta property="og:description"       content="Подробное руководство по правильной чистке зубов от стоматолога. Техника, время, выбор щётки и пасты.">
+  <meta property="og:image"             content="https://dentacare.ru/assets/img/og-image.jpg">
+  <meta property="article:author"       content="Козлова Мария Сергеевна">
+  <meta property="article:published_time" content="2024-10-15">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@dentacare">
+  <meta name="twitter:title"       content="Как правильно чистить зубы: полное руководство — DentaCare">
+  <meta name="twitter:description" content="Подробное руководство по правильной чистке зубов от стоматолога. Техника, время, выбор щётки и пасты.">
+  <meta name="twitter:image"       content="https://dentacare.ru/assets/img/og-image.jpg">
+
+  <style>
+    
+    /* ================================================================
+       Footer component styles
+       ================================================================ */
+
+    .site-footer {
+      background: var(--color-primary);
+      color: rgba(255,255,255,0.85);
+      padding: var(--space-4xl) 0 0;
+      margin-top: auto;
+    }
+    .site-footer__grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.3fr;
+      gap: var(--space-3xl);
+      padding-bottom: var(--space-3xl);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .footer-col__heading {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: var(--space-lg);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .footer-brand__logo {
+      display: inline-flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+      margin-bottom: var(--space-md);
+    }
+    .footer-brand__name {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .footer-brand__name span { color: var(--color-accent); }
+    .footer-brand__tagline {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .footer-brand__desc {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: var(--space-lg);
+      max-width: 300px;
+    }
+    .footer-social {
+      display: flex;
+      gap: var(--space-sm);
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .footer-social__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-social__link:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    .footer-nav__list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .footer-nav__list a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 6px 0;
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color var(--transition), gap var(--transition);
+    }
+    .footer-nav__list a::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .footer-nav__list a:hover { color: #fff; gap: var(--space-md); }
+    .footer-nav__list a:hover::before { opacity: 1; }
+
+    .footer-contacts__list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .footer-contacts__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+    .footer-contacts__item svg { flex-shrink: 0; margin-top: 2px; color: var(--color-accent); }
+    .footer-contacts__item a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color var(--transition); }
+    .footer-contacts__item a:hover { color: #fff; }
+    .footer-contacts__hours { display: flex; flex-direction: column; gap: 2px; }
+    .footer-contacts__hours span:first-child { color: #fff; font-weight: 600; }
+
+    .footer-bottom { padding: var(--space-lg) 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-bottom__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+    .footer-bottom__copy { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+    .footer-bottom__links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .footer-bottom__links a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
+    .footer-bottom__links a:hover { color: rgba(255,255,255,0.9); }
+
+    .footer-disclaimer { background: rgba(0,0,0,0.2); padding: var(--space-md) 0; text-align: center; }
+    .footer-disclaimer p { font-size: 0.8125rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+    body.visually-impaired .site-footer { background: #000; border-top: 2px solid #FFD700; }
+    body.visually-impaired .footer-bottom { border-top-color: rgba(255,215,0,0.3); }
+    body.visually-impaired .footer-disclaimer { background: #111; }
+    body.visually-impaired .footer-social__link:hover { background: #FFD700; color: #000; border-color: #FFD700; }
+
+    /* ================================================================
+       Page-specific styles — blog-post.html
+       ================================================================ */
+
+    /* ── Breadcrumbs (light background variant) ─────────────── */
+    .post-breadcrumbs {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 40px 0 0;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+    }
+    .post-breadcrumbs li { display: flex; align-items: center; gap: 6px; }
+    .post-breadcrumbs li::after {
+      content: '›';
+      color: var(--color-border);
+      font-size: 1.1rem;
+    }
+    .post-breadcrumbs li:last-child::after { display: none; }
+    .post-breadcrumbs a {
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .post-breadcrumbs a:hover { color: var(--color-primary); }
+    .post-breadcrumbs li:last-child span { color: var(--color-text); }
+
+    /* ── Two-column layout ──────────────────────────────────── */
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      padding: 60px 0;
+      align-items: start;
+    }
+
+    /* ── Article header ──────────────────────────────────────── */
+    .article__badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      background: rgba(34,197,160,0.1);
+      color: var(--color-accent);
+    }
+
+    .article__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .article__meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 24px;
+      align-items: center;
+    }
+    .article__meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .article__meta-item svg { color: var(--color-accent); flex-shrink: 0; }
+
+    .article__divider {
+      border: none;
+      border-top: 1px solid var(--color-border);
+      margin: 0 0 32px;
+    }
+
+    /* ── Article body ───────────────────────────────────────── */
+    .article {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text);
+    }
+
+    .article h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: 36px 0 16px;
+      line-height: 1.25;
+    }
+
+    .article h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: 24px 0 12px;
+    }
+
+    .article p { margin-bottom: 16px; }
+    .article p:last-child { margin-bottom: 0; }
+
+    .article ol,
+    .article ul {
+      padding-left: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .article li { line-height: 1.65; }
+
+    .article blockquote {
+      border-left: 4px solid var(--color-accent);
+      padding: 16px 24px;
+      background: var(--color-surface);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin: 24px 0;
+      line-height: 1.7;
+    }
+    .article blockquote cite {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    /* ── Article CTA ─────────────────────────────────────────── */
+    .article-cta {
+      background: var(--color-surface);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      border-left: 4px solid var(--color-accent);
+      margin-top: 40px;
+    }
+    .article-cta__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+    .article-cta__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    /* ── Sidebar ─────────────────────────────────────────────── */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: 80px;
+    }
+
+    .sidebar-card {
+      border-radius: var(--radius-md);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Sidebar: booking */
+    .sidebar-card--booking {
+      background: var(--color-primary);
+      color: #fff;
+      text-align: center;
+    }
+    .sidebar-card--booking .sidebar-card__title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .sidebar-card--booking .sidebar-card__text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .btn-accent {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    .btn-accent:hover {
+      background: #1aad8c;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(34,197,160,0.35);
+    }
+    .sidebar-card--booking .sidebar-card__phone {
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color var(--transition);
+      display: block;
+    }
+    .sidebar-card--booking .sidebar-card__phone:hover { color: #fff; }
+
+    /* Sidebar: related posts */
+    .sidebar-card--related {
+      background: #fff;
+      border: 1px solid var(--color-border);
+    }
+    .sidebar-card__heading {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+    .related-list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .related-list__item { border-bottom: 1px solid var(--color-border); }
+    .related-list__item:last-child { border-bottom: none; }
+    .related-list__link {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 0;
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .related-list__category {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .related-list__title {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.45;
+      transition: color var(--transition);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .related-list__title::after {
+      content: '→';
+      flex-shrink: 0;
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      margin-top: 2px;
+      transition: color var(--transition), transform var(--transition);
+    }
+    .related-list__link:hover .related-list__title { color: var(--color-primary); }
+    .related-list__link:hover .related-list__title::after { color: var(--color-accent); transform: translateX(3px); }
+
+    /* Sidebar: author */
+    .sidebar-card--author {
+      background: #fff;
+      border: 1px solid var(--color-border);
+    }
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .author-avatar {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--color-primary);
+      margin-bottom: 3px;
+    }
+    .author-role {
+      font-size: 0.8125rem;
+      color: var(--color-text-muted);
+      line-height: 1.4;
+    }
+    .author-bio {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.65;
+      border-top: 1px solid var(--color-border);
+      padding-top: 14px;
+    }
+
+    body.visually-impaired .article blockquote { background: #111; border-left-color: #FFD700; color: #ccc; }
+    body.visually-impaired .article-cta { background: #111; border-left-color: #FFD700; }
+    body.visually-impaired .sidebar-card--booking { background: #000; border: 1px solid #FFD700; }
+    body.visually-impaired .sidebar-card--related,
+    body.visually-impaired .sidebar-card--author { background: #111; border-color: #333; }
+    body.visually-impaired .related-list__item { border-bottom-color: #333; }
+    body.visually-impaired .author-bio { border-top-color: #333; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Topbar ─────────────────────────────────────────────── -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <div class="topbar__contacts">
+          <a href="#" class="topbar__address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            г. Москва, ул. Тверская, д. 15
+          </a>
+          <a href="tel:+74951234567">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +7 (495) 123-45-67
+          </a>
+        </div>
+        <button id="accessibility-toggle" class="topbar__accessibility" type="button" aria-pressed="false" aria-label="Включить версию для слабовидящих">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/><path d="M2 12S5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z"/>
+          </svg>
+          Версия для слабовидящих
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main Header ────────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="index.html" class="logo" aria-label="DentaCare — на главную">
+          <span class="logo__name">Denta<span>Care</span></span>
+          <span class="logo__tagline">Стоматологическая клиника</span>
+        </a>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <ul class="main-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="doctors.html">Врачи</a></li>
+            <li><a href="blog.html" class="active">Блог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__cta">
+          <a href="contacts.html" class="btn-primary">Записаться</a>
+        </div>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Мобильная навигация" hidden>
+      <div class="container">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="doctors.html">Врачи</a></li>
+          <li><a href="blog.html" class="active">Блог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="mobile-menu__cta">
+          <a href="contacts.html" class="btn-primary">Записаться на приём</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="blog-layout">
+
+        <!-- ════════════════════════════════════════════════════ -->
+        <!--  ЛЕВАЯ КОЛОНКА — СТАТЬЯ                             -->
+        <!-- ════════════════════════════════════════════════════ -->
+        <div class="blog-main">
+
+          <!-- Breadcrumbs -->
+          <ol class="post-breadcrumbs" aria-label="Навигационная цепочка">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><span>Как правильно чистить зубы</span></li>
+          </ol>
+
+          <!-- Article header -->
+          <header>
+            <span class="article__badge">Гигиена</span>
+            <h1 class="article__title">Как правильно чистить зубы: полное руководство</h1>
+            <div class="article__meta">
+              <div class="article__meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+                </svg>
+                Козлова Мария Сергеевна, стоматолог-терапевт
+              </div>
+              <div class="article__meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <time datetime="2024-10-15">15 октября 2024</time>
+              </div>
+              <div class="article__meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+                5 мин
+              </div>
+            </div>
+            <hr class="article__divider">
+          </header>
+
+          <!-- Article body -->
+          <article class="article">
+
+            <h2>Почему важна правильная техника чистки</h2>
+            <p>Большинство людей чистят зубы неправильно — слишком быстро, слишком сильно или неправильными движениями. По данным исследований, средний человек тратит на чистку зубов около 45 секунд, тогда как рекомендуемое время — минимум 2 минуты.</p>
+            <p>Неправильная техника не просто неэффективна — она может причинить реальный вред: стереть зубную эмаль, травмировать дёсны и сформировать клиновидные дефекты у основания зубов. Правильная чистка, наоборот, удаляет налёт, предотвращает кариес и сохраняет здоровье дёсен на десятилетия.</p>
+
+            <h2>Пошаговая техника чистки зубов</h2>
+            <p>Стоматологи рекомендуют технику Басса или её модификацию — она признана наиболее эффективной для удаления налёта в области дёсневой борозды.</p>
+            <ol>
+              <li>Нанесите небольшое количество пасты (размером с горошину) на щётку</li>
+              <li>Держите щётку под углом 45° к дёснам</li>
+              <li>Делайте короткие круговые движения — не трите зубы горизонтально</li>
+              <li>Чистите каждый зуб отдельно — по 2–3 секунды</li>
+              <li>Не забывайте о внутренней и жевательной поверхности</li>
+              <li>В конце почистите язык — он накапливает бактерии, вызывающие неприятный запах</li>
+            </ol>
+
+            <blockquote>
+              «Горизонтальные движения — одна из самых частых ошибок. Они стирают эмаль и травмируют дёсны. Только круговые и вертикальные движения от десны к краю зуба.»
+              <cite>— Козлова М.С., стоматолог-терапевт</cite>
+            </blockquote>
+
+            <h2>Как выбрать зубную щётку</h2>
+            <p>Выбор щётки — вопрос не менее важный, чем техника чистки. Слишком жёсткая щетина повреждает эмаль и дёсны, слишком мягкая — не справляется с налётом. Ориентируйтесь на следующие критерии:</p>
+            <ul>
+              <li>Мягкая щетина (soft) — для чувствительных зубов и кровоточащих дёсен</li>
+              <li>Средняя щетина (medium) — оптимальна для большинства взрослых</li>
+              <li>Электрическая щётка эффективнее ручной в среднем на 20% по удалению налёта</li>
+              <li>Менять щётку следует каждые 3 месяца или после перенесённой болезни</li>
+            </ul>
+
+            <h2>Сколько раз в день чистить зубы</h2>
+            <p>Два раза — утром и вечером. Вечерняя чистка важнее утренней: именно ночью, когда выработка слюны снижается, бактерии наиболее активны. Пропустить утреннюю чистку — неприятно. Пропустить вечернюю — опасно для здоровья зубов.</p>
+            <p>После каждого приёма пищи рот можно прополоскать водой или использовать ополаскиватель. Жвачка без сахара в течение 10–15 минут после еды также помогает нейтрализовать кислоты. Однако это дополнение к чистке, а не замена ей.</p>
+
+            <h2>Вывод</h2>
+            <p>Правильная чистка зубов занимает всего 2 минуты дважды в день, но защищает от кариеса, болезней дёсен и дорогостоящего лечения. Вложите эти 4 минуты в сутки — и ваши зубы скажут спасибо через 20 лет.</p>
+
+          </article>
+
+          <!-- Article CTA -->
+          <div class="article-cta">
+            <h3 class="article-cta__title">Когда вы последний раз были у стоматолога?</h3>
+            <p class="article-cta__text">Профилактический осмотр раз в полгода — лучший способ сохранить здоровые зубы. Первичная консультация в DentaCare — бесплатно.</p>
+            <a href="contacts.html" class="btn-primary">Записаться на осмотр</a>
+          </div>
+
+        </div>
+
+        <!-- ════════════════════════════════════════════════════ -->
+        <!--  ПРАВАЯ КОЛОНКА — САЙДБАР                           -->
+        <!-- ════════════════════════════════════════════════════ -->
+        <aside class="sidebar" aria-label="Дополнительная информация">
+
+          <!-- Booking card -->
+          <div class="sidebar-card sidebar-card--booking">
+            <h2 class="sidebar-card__title">Нужна консультация?</h2>
+            <p class="sidebar-card__text">Запишитесь к врачу онлайн — перезвоним в ближайшее время</p>
+            <a href="contacts.html" class="btn-accent">Записаться</a>
+            <a href="tel:+74951234567" class="sidebar-card__phone">+7 (495) 123-45-67</a>
+          </div>
+
+          <!-- Related posts card -->
+          <div class="sidebar-card sidebar-card--related">
+            <h2 class="sidebar-card__heading">Читайте также</h2>
+            <ul class="related-list">
+              <li class="related-list__item">
+                <a href="blog-post.html" class="related-list__link">
+                  <span class="related-list__category" style="color: #7c3aed;">Имплантация</span>
+                  <span class="related-list__title">Имплантация зубов: мифы и реальность</span>
+                </a>
+              </li>
+              <li class="related-list__item">
+                <a href="blog-post.html" class="related-list__link">
+                  <span class="related-list__category" style="color: #f59e0b;">Профилактика</span>
+                  <span class="related-list__title">Когда нужно идти к стоматологу: 8 тревожных сигналов</span>
+                </a>
+              </li>
+              <li class="related-list__item">
+                <a href="blog-post.html" class="related-list__link">
+                  <span class="related-list__category" style="color: var(--color-accent);">Эстетика</span>
+                  <span class="related-list__title">Отбеливание зубов: домашнее vs профессиональное</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Author card -->
+          <div class="sidebar-card sidebar-card--author">
+            <h2 class="sidebar-card__heading">Автор</h2>
+            <div class="author-info">
+              <div class="author-avatar" style="background: #22C5A0;" aria-hidden="true">МК</div>
+              <div>
+                <div class="author-name">Козлова Мария Сергеевна</div>
+                <div class="author-role">Стоматолог-терапевт, стаж 12 лет</div>
+              </div>
+            </div>
+            <p class="author-bio">Специализируется на лечении кариеса и эндодонтии. Регулярно проходит курсы повышения квалификации.</p>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-brand__logo" aria-label="DentaCare — на главную">
+            <span class="footer-brand__name">Denta<span>Care</span></span>
+            <span class="footer-brand__tagline">Стоматологическая клиника</span>
+          </a>
+          <p class="footer-brand__desc">Современная стоматология с заботой о каждом пациенте. Профессиональное лечение, протезирование и эстетическая стоматология в Москве с 2001 года.</p>
+          <ul class="footer-social" aria-label="Социальные сети">
+            <li>
+              <a href="#" class="footer-social__link" aria-label="ВКонтакте">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.06 13.29h-1.52c-.58 0-.76-.46-1.8-1.52-.91-.88-1.31-.99-1.53-.99-.31 0-.4.09-.4.52v1.39c0 .37-.12.59-1.1.59-1.62 0-3.41-.98-4.67-2.8C5.62 10.4 5 8.4 5 7.91c0-.22.09-.43.52-.43h1.52c.39 0 .54.18.69.61.76 2.19 2.02 4.11 2.54 4.11.2 0 .28-.09.28-.58V9.48c-.06-1.04-.61-1.13-.61-1.5 0-.18.15-.37.39-.37h2.39c.33 0 .45.18.45.55v2.97c0 .33.15.45.24.45.2 0 .37-.12.74-.49 1.14-1.28 1.96-3.24 1.96-3.24.11-.22.28-.43.67-.43h1.52c.46 0 .56.24.46.55-.19.89-2.03 3.47-2.03 3.47-.16.26-.22.37 0 .66.16.22.69.67 1.04 1.08.65.73 1.14 1.34 1.27 1.76.12.42-.09.64-.52.64z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-social__link" aria-label="Telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.43 13.9l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.723.659z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-social__link" aria-label="WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="footer-col" aria-label="Навигация по сайту">
+          <h3 class="footer-col__heading">Навигация</h3>
+          <ul class="footer-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="doctors.html">Врачи</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-col" style="font-style: normal;">
+          <h3 class="footer-col__heading">Контакты</h3>
+          <ul class="footer-contacts__list">
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>г. Москва, ул. Тверская, д. 15</span>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:info@dentacare.ru">info@dentacare.ru</a>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div class="footer-contacts__hours">
+                <span>Пн–Вс: 8:00 — 21:00</span>
+                <span>Без выходных</span>
+              </div>
+            </li>
+          </ul>
+        </address>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__inner">
+          <p class="footer-bottom__copy">© 2026 DentaCare. Все права защищены.</p>
+          <ul class="footer-bottom__links">
+            <li><a href="privacy.html">Политика конфиденциальности</a></li>
+            <li><a href="#">Лицензии</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer" role="note">
+      <div class="container">
+        <p>Имеются противопоказания. Необходима консультация специалиста.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Как правильно чистить зубы: полное руководство",
+    "author": {
+      "@type": "Person",
+      "name": "Козлова Мария Сергеевна"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DentaCare",
+      "url": "https://dentacare.ru"
+    },
+    "datePublished": "2024-10-15",
+    "description": "Подробное руководство по правильной чистке зубов от стоматолога DentaCare."
+  }
+  </script>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Уведомление о cookies" hidden>
+    <div class="cookie-banner__inner container">
+      <div class="cookie-banner__text">
+        <strong>Мы используем cookies</strong>
+        <p>Сайт использует cookies для улучшения работы и анализа трафика.
+        Продолжая использовать сайт, вы соглашаетесь с
+        <a href="privacy.html#cookies">политикой использования cookies</a>.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button id="cookie-accept" class="btn-primary" type="button">Принять</button>
+        <button id="cookie-decline" class="btn-outline" type="button">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

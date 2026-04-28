@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DentaCare — современная стоматологическая клиника в Москве. Безболезненное лечение, протезирование, имплантация, отбеливание зубов. Запись онлайн.">
+  <title>DentaCare — Стоматологическая клиника</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="canonical" href="https://dentacare.ru/">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:site_name"   content="DentaCare">
+  <meta property="og:locale"      content="ru_RU">
+  <meta property="og:url"         content="https://dentacare.ru/">
+  <meta property="og:title"       content="DentaCare — Стоматологическая клиника в Москве">
+  <meta property="og:description" content="Современная стоматология для всей семьи. Безболезненное лечение, протезирование, имплантация. Запись онлайн.">
+  <meta property="og:image"       content="https://dentacare.ru/assets/img/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:site"        content="@dentacare">
+  <meta name="twitter:title"       content="DentaCare — Стоматологическая клиника в Москве">
+  <meta name="twitter:description" content="Современная стоматология для всей семьи. Безболезненное лечение, протезирование, имплантация. Запись онлайн.">
+  <meta name="twitter:image"       content="https://dentacare.ru/assets/img/og-image.jpg">
+
+  <style>
+    /* ================================================================
+       Footer component styles
+       ================================================================ */
+
+    .site-footer {
+      background: var(--color-primary);
+      color: rgba(255,255,255,0.85);
+      padding: var(--space-4xl) 0 0;
+      margin-top: auto;
+    }
+    .site-footer__grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.3fr;
+      gap: var(--space-3xl);
+      padding-bottom: var(--space-3xl);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+    .footer-col__heading {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: var(--space-lg);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .footer-brand__logo {
+      display: inline-flex;
+      flex-direction: column;
+      text-decoration: none;
+      line-height: 1.15;
+      margin-bottom: var(--space-md);
+    }
+    .footer-brand__name {
+      font-family: var(--font-display);
+      font-size: 1.625rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .footer-brand__name span { color: var(--color-accent); }
+    .footer-brand__tagline {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .footer-brand__desc {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: var(--space-lg);
+      max-width: 300px;
+    }
+    .footer-social {
+      display: flex;
+      gap: var(--space-sm);
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .footer-social__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px; height: 40px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition), transform var(--transition);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-social__link:hover {
+      background: var(--color-accent);
+      color: #fff;
+      border-color: var(--color-accent);
+      transform: translateY(-2px);
+    }
+    .footer-nav__list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .footer-nav__list a {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+      padding: 6px 0;
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color var(--transition), gap var(--transition);
+    }
+    .footer-nav__list a::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .footer-nav__list a:hover { color: #fff; gap: var(--space-md); }
+    .footer-nav__list a:hover::before { opacity: 1; }
+
+    .footer-contacts__list {
+      list-style: none;
+      margin: 0; padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+    .footer-contacts__item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-sm);
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.5;
+    }
+    .footer-contacts__item svg { flex-shrink: 0; margin-top: 2px; color: var(--color-accent); }
+    .footer-contacts__item a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color var(--transition); }
+    .footer-contacts__item a:hover { color: #fff; }
+    .footer-contacts__hours { display: flex; flex-direction: column; gap: 2px; }
+    .footer-contacts__hours span:first-child { color: #fff; font-weight: 600; }
+
+    .footer-bottom { padding: var(--space-lg) 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-bottom__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+    .footer-bottom__copy { font-size: 0.875rem; color: rgba(255,255,255,0.5); }
+    .footer-bottom__links {
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .footer-bottom__links a { font-size: 0.875rem; color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--transition); }
+    .footer-bottom__links a:hover { color: rgba(255,255,255,0.9); }
+
+    .footer-disclaimer { background: rgba(0,0,0,0.2); padding: var(--space-md) 0; text-align: center; }
+    .footer-disclaimer p { font-size: 0.8125rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+    body.visually-impaired .site-footer { background: #000; border-top: 2px solid #FFD700; }
+    body.visually-impaired .footer-bottom { border-top-color: rgba(255,215,0,0.3); }
+    body.visually-impaired .footer-disclaimer { background: #111; }
+    body.visually-impaired .footer-social__link:hover { background: #FFD700; color: #000; border-color: #FFD700; }
+
+    /* ================================================================
+       Page-specific styles — index.html
+       ================================================================ */
+
+    /* ── Shared form fields ──────────────────────────────────── */
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-field label { font-size: 0.875rem; font-weight: 600; color: var(--color-text); }
+    .form-field input,
+    .form-field select {
+      padding: 12px 16px;
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      background: #fff;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      width: 100%;
+      appearance: none;
+    }
+    .form-field input:focus,
+    .form-field select:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(34,197,160,0.15);
+    }
+    .form-field input::placeholder { color: var(--color-text-muted); }
+
+    /* ── Section header ──────────────────────────────────────── */
+    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header .section-subtitle { margin: 12px auto 0; }
+
+    /* ── Hero ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 90vh;
+      background: linear-gradient(135deg, #0F2B5B 0%, #1a4a8a 100%);
+      display: flex;
+      align-items: center;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -8%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(34,197,160,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero__inner {
+      display: grid;
+      grid-template-columns: 60% 40%;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero__label {
+      display: inline-block;
+      font-size: 0.8125rem;
+      color: var(--color-accent);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .hero__subtitle {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 520px;
+    }
+    .hero__actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero__actions .btn-outline {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+    }
+    .hero__actions .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      border-color: #fff;
+      color: #fff;
+    }
+    .hero__facts { display: flex; gap: 32px; flex-wrap: wrap; }
+    .hero__fact {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+    .hero__fact-check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px; height: 20px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Hero card */
+    .hero__card {
+      background: rgba(255,255,255,0.96);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+    }
+    .hero__card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+    }
+    .hero__card-subtitle { font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 28px; }
+    .hero-form { display: flex; flex-direction: column; gap: 14px; }
+    .hero-form .btn-primary { width: 100%; text-align: center; padding: 15px; margin-top: 4px; }
+    .hero__card-note { font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: 12px; }
+
+    /* ── Services ────────────────────────────────────────────── */
+    .services { padding: 80px 0; }
+    .services__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-card:hover .service-card__icon { transform: scale(1.12); }
+    .service-card__icon { font-size: 2.5rem; margin-bottom: 16px; display: block; transition: transform var(--transition); }
+    .service-card__name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+    }
+    .service-card__price { font-size: 0.875rem; color: var(--color-accent); font-weight: 600; margin-bottom: 16px; }
+    .service-card__link {
+      font-size: 0.875rem;
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color var(--transition), gap var(--transition);
+    }
+    .service-card__link:hover { color: var(--color-accent); gap: 8px; }
+
+    /* ── How We Work ──────────────────────────────────────────── */
+    .how-we-work { padding: 80px 0; background: var(--color-surface); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      align-items: start;
+      gap: 0;
+      margin-top: 56px;
+    }
+    .step { text-align: center; padding: 0 8px; }
+    .step__icon-wrap {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 16px;
+      border: 3px solid var(--color-border);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .step:hover .step__icon-wrap { border-color: var(--color-accent); transform: translateY(-4px); }
+    .step__num {
+      display: inline-block;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .step__title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--color-primary); margin-bottom: 10px; }
+    .step__text { font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.65; }
+    .steps__arrow { padding-top: 20px; color: var(--color-accent); font-size: 1.75rem; flex-shrink: 0; }
+
+    /* ── Advantages ───────────────────────────────────────────── */
+    .advantages { padding: 80px 0; background: var(--color-primary); color: #fff; }
+    .advantages .section-title { color: #fff; text-align: center; }
+    .advantages .section-header .section-subtitle { color: rgba(255,255,255,0.65); margin: 0 auto; }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin: 56px 0;
+      padding: 40px;
+      background: rgba(255,255,255,0.05);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat { text-align: center; }
+    .stat__num {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat__label { font-size: 0.875rem; color: rgba(255,255,255,0.7); line-height: 1.4; }
+
+    .adv-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; list-style: none; padding: 0; margin: 0; }
+    .adv-list__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.55;
+    }
+    .adv-list__check {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── Reviews ──────────────────────────────────────────────── */
+    .reviews { padding: 80px 0; background: #fff; }
+    .reviews__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+
+    .review-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .review-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .review-card__header { display: flex; align-items: center; gap: 14px; }
+    .review-card__avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .review-card__meta { display: flex; flex-direction: column; gap: 3px; }
+    .review-card__name { font-weight: 700; color: var(--color-primary); font-size: 0.9375rem; }
+    .review-card__age { font-size: 0.8125rem; color: var(--color-text-muted); }
+    .review-card__stars { color: #f59e0b; font-size: 0.875rem; letter-spacing: 1px; }
+    .review-card__text {
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      flex: 1;
+      position: relative;
+      padding-left: 20px;
+    }
+    .review-card__text::before {
+      content: '"';
+      position: absolute;
+      left: 0; top: -6px;
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--color-accent);
+      line-height: 1;
+      opacity: 0.5;
+    }
+
+    /* ── FAQ ──────────────────────────────────────────────────── */
+    .faq { padding: 80px 0; background: var(--color-surface); }
+    .faq__list { max-width: 800px; margin: 56px auto 0; display: flex; flex-direction: column; gap: 12px; }
+
+    .faq-item {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      transition: box-shadow var(--transition);
+    }
+    .faq-item:hover { box-shadow: var(--shadow-sm); }
+    .faq-item__question {
+      width: 100%;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      transition: background var(--transition), color var(--transition);
+    }
+    .faq-item__question:hover { background: var(--color-surface); }
+    .faq-item.open .faq-item__question { background: var(--color-surface); color: var(--color-accent); }
+    .faq-item__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--color-surface);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-primary);
+      flex-shrink: 0;
+      font-size: 1.2rem;
+      line-height: 1;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), color var(--transition);
+    }
+    .faq-item.open .faq-item__icon {
+      transform: rotate(45deg);
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+    }
+    .faq-item__answer {
+      display: none;
+      padding: 0 24px 20px;
+      font-size: 0.9375rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-item__answer p { padding-top: 16px; }
+    .faq-item.open .faq-item__answer { display: block; }
+
+    /* ── Booking ──────────────────────────────────────────────── */
+    .booking {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0F2B5B 0%, #1a4a8a 100%);
+    }
+    .booking .section-title { color: #fff; }
+    .booking__subtitle { color: rgba(255,255,255,0.7); font-size: 1.1rem; margin-top: 8px; }
+    .booking__inner { max-width: 860px; margin: 0 auto; text-align: center; }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.4fr auto;
+      gap: 12px;
+      margin-top: 40px;
+      align-items: end;
+    }
+    .booking-form .form-field label { color: rgba(255,255,255,0.85); }
+    .booking-form .form-field input,
+    .booking-form .form-field select {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.25);
+      color: #fff;
+    }
+    .booking-form .form-field input::placeholder { color: rgba(255,255,255,0.45); }
+    .booking-form .form-field input:focus,
+    .booking-form .form-field select:focus {
+      border-color: var(--color-accent);
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 0 0 3px rgba(34,197,160,0.25);
+    }
+    .booking-form .form-field select option { background: #0F2B5B; color: #fff; }
+    .booking-form .btn-primary { white-space: nowrap; padding: 12px 28px; align-self: end; height: 48px; }
+
+    .booking__consent {
+      grid-column: 1 / -1;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .booking__consent input[type="checkbox"] {
+      width: 18px; height: 18px;
+      accent-color: var(--color-accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .booking__consent a { color: var(--color-accent); text-decoration: underline; transition: opacity var(--transition); }
+    .booking__consent a:hover { opacity: 0.8; }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Topbar ─────────────────────────────────────────────── -->
+  <div class="topbar">
+    <div class="container">
+      <div class="topbar__inner">
+        <div class="topbar__contacts">
+          <a href="#" class="topbar__address">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            г. Москва, ул. Тверская, д. 15
+          </a>
+          <a href="tel:+74951234567">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +7 (495) 123-45-67
+          </a>
+        </div>
+        <button id="accessibility-toggle" class="topbar__accessibility" type="button" aria-pressed="false" aria-label="Включить версию для слабовидящих">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/><path d="M2 12S5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z"/>
+          </svg>
+          Версия для слабовидящих
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Main Header ────────────────────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="index.html" class="logo" aria-label="DentaCare — на главную">
+          <span class="logo__name">Denta<span>Care</span></span>
+          <span class="logo__tagline">Стоматологическая клиника</span>
+        </a>
+        <nav class="main-nav" aria-label="Основная навигация">
+          <ul class="main-nav__list">
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="doctors.html">Врачи</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="site-header__cta">
+          <a href="contacts.html" class="btn-primary">Записаться</a>
+        </div>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </div>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Мобильная навигация" hidden>
+      <div class="container">
+        <ul class="mobile-menu__list">
+          <li><a href="index.html" class="active">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="doctors.html">Врачи</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+        <div class="mobile-menu__cta">
+          <a href="contacts.html" class="btn-primary">Записаться на приём</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  HERO                                                  -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="hero" aria-label="Главный баннер">
+      <div class="container">
+        <div class="hero__inner">
+
+          <!-- Left: text -->
+          <div class="hero__content">
+            <span class="hero__label">Стоматология в Москве&nbsp;•&nbsp;Работаем с 2001 года</span>
+            <h1 class="hero__title">Здоровые зубы&nbsp;— красивая улыбка на всю жизнь</h1>
+            <p class="hero__subtitle">Современная стоматология для всей семьи. Безболезненное лечение, опытные врачи, гарантия качества.</p>
+            <div class="hero__actions">
+              <a href="#booking" class="btn-primary">Записаться на приём</a>
+              <a href="services.html" class="btn-outline">Наши услуги</a>
+            </div>
+            <div class="hero__facts">
+              <div class="hero__fact">
+                <span class="hero__fact-check" aria-hidden="true">✓</span>
+                Анонимно
+              </div>
+              <div class="hero__fact">
+                <span class="hero__fact-check" aria-hidden="true">✓</span>
+                Круглосуточно
+              </div>
+              <div class="hero__fact">
+                <span class="hero__fact-check" aria-hidden="true">✓</span>
+                Выезд на дом
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: mini booking card -->
+          <div class="hero__card">
+            <h2 class="hero__card-title">Запись онлайн</h2>
+            <p class="hero__card-subtitle">Перезвоним в ближайшее время</p>
+            <form class="hero-form" action="#" method="post" novalidate>
+              <div class="form-field">
+                <label for="hero-name">Ваше имя</label>
+                <input type="text" id="hero-name" name="name" placeholder="Иван Иванов" autocomplete="given-name">
+              </div>
+              <div class="form-field">
+                <label for="hero-phone">Телефон</label>
+                <input type="tel" id="hero-phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+              </div>
+              <button type="submit" class="btn-primary">Записаться</button>
+              <p class="hero__card-note">
+                <label style="display:flex;align-items:flex-start;gap:8px;font-size:0.8rem;color:var(--color-text-muted);cursor:pointer;">
+                  <input type="checkbox" name="consent" required style="margin-top:2px;accent-color:var(--color-accent);">
+                  <span>Нажимая кнопку, вы соглашаетесь с <a href="privacy.html" style="color:var(--color-accent)">политикой конфиденциальности</a></span>
+                </label>
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  УСЛУГИ                                                -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title" id="services-title">Наши услуги</h2>
+          <p class="section-subtitle">Полный спектр стоматологических услуг для взрослых и детей</p>
+        </div>
+        <div class="services__grid">
+
+          <article class="service-card animate-on-scroll">
+            <img src="assets/img/icons/icon-caries.svg" class="service-card__icon" alt="" aria-hidden="true" width="48" height="48">
+            <h3 class="service-card__name">Лечение кариеса</h3>
+            <p class="service-card__price">от 2 500 руб.</p>
+            <a href="services.html" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <img src="assets/img/icons/icon-prosthetics.svg" class="service-card__icon" alt="" aria-hidden="true" width="48" height="48">
+            <h3 class="service-card__name">Протезирование</h3>
+            <p class="service-card__price">от 15 000 руб.</p>
+            <a href="services.html" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <img src="assets/img/icons/icon-whitening.svg" class="service-card__icon" alt="" aria-hidden="true" width="48" height="48">
+            <h3 class="service-card__name">Отбеливание</h3>
+            <p class="service-card__price">от 8 000 руб.</p>
+            <a href="services.html" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <img src="assets/img/icons/icon-implant.svg" class="service-card__icon" alt="" aria-hidden="true" width="48" height="48">
+            <h3 class="service-card__name">Имплантация</h3>
+            <p class="service-card__price">от 25 000 руб.</p>
+            <a href="services.html" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <img src="assets/img/icons/icon-children.svg" class="service-card__icon" alt="" aria-hidden="true" width="48" height="48">
+            <h3 class="service-card__name">Детская стоматология</h3>
+            <p class="service-card__price">от 1 500 руб.</p>
+            <a href="services.html" class="service-card__link">Подробнее →</a>
+          </article>
+
+          <article class="service-card animate-on-scroll">
+            <img src="assets/img/icons/icon-surgery.svg" class="service-card__icon" alt="" aria-hidden="true" width="48" height="48">
+            <h3 class="service-card__name">Хирургия</h3>
+            <p class="service-card__price">от 3 000 руб.</p>
+            <a href="services.html" class="service-card__link">Подробнее →</a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  КАК МЫ РАБОТАЕМ                                       -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="how-we-work" aria-labelledby="how-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title" id="how-title">Как проходит приём</h2>
+          <p class="section-subtitle">Три простых шага до здоровой улыбки</p>
+        </div>
+        <div class="steps" role="list">
+
+          <div class="step animate-on-scroll" role="listitem">
+            <div class="step__icon-wrap" aria-hidden="true">
+              <i data-lucide="phone-call"></i>
+            </div>
+            <div class="step__num" aria-hidden="true">1</div>
+            <h3 class="step__title">Звонок или заявка</h3>
+            <p class="step__text">Позвоните или оставьте заявку онлайн — мы перезвоним и подберём удобное время</p>
+          </div>
+
+          <div class="steps__arrow" aria-hidden="true">→</div>
+
+          <div class="step animate-on-scroll" role="listitem">
+            <div class="step__icon-wrap" aria-hidden="true">
+              <i data-lucide="clipboard-plus"></i>
+            </div>
+            <div class="step__num" aria-hidden="true">2</div>
+            <h3 class="step__title">Осмотр и план лечения</h3>
+            <p class="step__text">Врач проведёт осмотр, при необходимости сделает снимок и составит персональный план лечения</p>
+          </div>
+
+          <div class="steps__arrow" aria-hidden="true">→</div>
+
+          <div class="step animate-on-scroll" role="listitem">
+            <div class="step__icon-wrap" aria-hidden="true">
+              <i data-lucide="smile"></i>
+            </div>
+            <div class="step__num" aria-hidden="true">3</div>
+            <h3 class="step__title">Лечение и результат</h3>
+            <p class="step__text">Проводим лечение комфортно и без боли, объясняем каждый шаг и даём гарантию на все виды работ</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  ПРЕИМУЩЕСТВА                                          -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="advantages" aria-labelledby="adv-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title" id="adv-title">Почему выбирают DentaCare</h2>
+          <p class="section-subtitle">Доверие тысяч пациентов — наша главная награда</p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat animate-on-scroll">
+            <div class="stat__num">23+</div>
+            <div class="stat__label">года на рынке</div>
+          </div>
+          <div class="stat animate-on-scroll">
+            <div class="stat__num">15&nbsp;000+</div>
+            <div class="stat__label">пациентов</div>
+          </div>
+          <div class="stat animate-on-scroll">
+            <div class="stat__num">12</div>
+            <div class="stat__label">врачей в штате</div>
+          </div>
+          <div class="stat animate-on-scroll">
+            <div class="stat__num">98%</div>
+            <div class="stat__label">довольных пациентов</div>
+          </div>
+        </div>
+
+        <ul class="adv-list">
+          <li class="adv-list__item">
+            <span class="adv-list__check" aria-hidden="true">✓</span>
+            Современное оборудование европейского класса
+          </li>
+          <li class="adv-list__item">
+            <span class="adv-list__check" aria-hidden="true">✓</span>
+            Анонимный приём без лишних вопросов
+          </li>
+          <li class="adv-list__item">
+            <span class="adv-list__check" aria-hidden="true">✓</span>
+            Работаем без выходных с 8:00 до 21:00
+          </li>
+          <li class="adv-list__item">
+            <span class="adv-list__check" aria-hidden="true">✓</span>
+            Гарантия на все виды работ от 1 до 5 лет
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  ОТЗЫВЫ                                                -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title" id="reviews-title">Отзывы пациентов</h2>
+          <p class="section-subtitle">Нам доверяют семьи по всей Москве</p>
+        </div>
+        <div class="reviews__grid">
+
+          <article class="review-card animate-on-scroll">
+            <div class="review-card__header">
+              <div class="review-card__avatar" style="background: #22C5A0;" aria-hidden="true">АК</div>
+              <div class="review-card__meta">
+                <div class="review-card__name">Александр К.</div>
+                <div class="review-card__age">34 года</div>
+                <div class="review-card__stars" aria-label="Оценка: 5 из 5">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-card__text">Обратился с острой болью, приняли сразу без записи. Врач всё объяснил, лечение прошло абсолютно безболезненно. Рекомендую!</p>
+          </article>
+
+          <article class="review-card animate-on-scroll">
+            <div class="review-card__header">
+              <div class="review-card__avatar" style="background: #7c3aed;" aria-hidden="true">МС</div>
+              <div class="review-card__meta">
+                <div class="review-card__name">Мария С.</div>
+                <div class="review-card__age">28 лет</div>
+                <div class="review-card__stars" aria-label="Оценка: 5 из 5">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-card__text">Наконец нашла клинику, где не страшно лечить зубы. Делают всё аккуратно, объясняют каждый шаг. Хожу сюда уже 3 года.</p>
+          </article>
+
+          <article class="review-card animate-on-scroll">
+            <div class="review-card__header">
+              <div class="review-card__avatar" style="background: #0F2B5B;" aria-hidden="true">СВ</div>
+              <div class="review-card__meta">
+                <div class="review-card__name">Сергей В.</div>
+                <div class="review-card__age">45 лет</div>
+                <div class="review-card__stars" aria-label="Оценка: 5 из 5">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-card__text">Сделал имплантацию. Результатом доволен, цена честная, врач профессиональный. Спасибо всей команде DentaCare!</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  FAQ                                                   -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <h2 class="section-title" id="faq-title">Частые вопросы</h2>
+          <p class="section-subtitle">Ответы на вопросы, которые задают чаще всего</p>
+        </div>
+        <div class="faq__list" role="list">
+
+          <div class="faq-item animate-on-scroll" role="listitem">
+            <button class="faq-item__question" type="button" aria-expanded="false">
+              Больно ли лечить зубы?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Нет, мы используем современные анестетики последнего поколения. Перед каждой процедурой врач делает местную анестезию — вы не почувствуете боли. Если вы испытываете страх перед лечением, мы предлагаем лечение под седацией.</p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" role="listitem">
+            <button class="faq-item__question" type="button" aria-expanded="false">
+              Сколько стоит первичная консультация?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Первичный осмотр у врача-стоматолога — бесплатно. Это включает визуальный осмотр, оценку состояния зубов и дёсен, а также рекомендации по лечению. Дополнительные диагностические процедуры (рентген, КТ) оплачиваются отдельно согласно прейскуранту.</p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" role="listitem">
+            <button class="faq-item__question" type="button" aria-expanded="false">
+              Работаете ли вы в выходные?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Да, мы работаем ежедневно, без выходных и праздников. Часы работы: с 8:00 до 21:00. В экстренных случаях (острая боль) мы принимаем пациентов вне очереди — просто позвоните нам.</p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" role="listitem">
+            <button class="faq-item__question" type="button" aria-expanded="false">
+              Есть ли гарантия на лечение?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Да, мы даём гарантию на все виды работ: от 1 года на пломбирование до 5 лет на имплантацию и протезирование. Гарантийные обязательства закрепляются в договоре, который подписывается до начала лечения.</p>
+            </div>
+          </div>
+
+          <div class="faq-item animate-on-scroll" role="listitem">
+            <button class="faq-item__question" type="button" aria-expanded="false">
+              Можно ли записаться онлайн?
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-item__answer" role="region">
+              <p>Да, записаться можно через форму на сайте, по телефону <a href="tel:+74951234567" style="color:var(--color-accent)">+7 (495) 123-45-67</a> или написав на <a href="mailto:info@dentacare.ru" style="color:var(--color-accent)">info@dentacare.ru</a>. Заявки через сайт обрабатываются в рабочее время.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════ -->
+    <!--  ФОРМА ЗАПИСИ                                          -->
+    <!-- ══════════════════════════════════════════════════════ -->
+    <section class="booking" id="booking" aria-labelledby="booking-title">
+      <div class="container">
+        <div class="booking__inner">
+          <h2 class="section-title" id="booking-title">Запишитесь на приём сегодня</h2>
+          <p class="booking__subtitle">Перезвоним и подберём удобное время</p>
+
+          <form class="booking-form" action="#" method="post" novalidate>
+            <div class="form-field">
+              <label for="b-name">Имя</label>
+              <input type="text" id="b-name" name="name" placeholder="Ваше имя" autocomplete="given-name" required>
+            </div>
+            <div class="form-field">
+              <label for="b-phone">Телефон</label>
+              <input type="tel" id="b-phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+            </div>
+            <div class="form-field">
+              <label for="b-service">Услуга</label>
+              <select id="b-service" name="service">
+                <option value="" disabled selected>Выберите услугу</option>
+                <option value="caries">Лечение кариеса</option>
+                <option value="prosthetics">Протезирование</option>
+                <option value="whitening">Отбеливание</option>
+                <option value="implant">Имплантация</option>
+                <option value="children">Детская стоматология</option>
+                <option value="surgery">Хирургия</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primary">Записаться</button>
+            <div class="booking__consent">
+              <input type="checkbox" id="b-consent" name="consent" required>
+              <label for="b-consent">
+                Я согласен(а) на обработку
+                <a href="privacy.html">персональных данных</a>
+              </label>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="site-footer__grid">
+
+        <div class="footer-col footer-col--brand">
+          <a href="index.html" class="footer-brand__logo" aria-label="DentaCare — на главную">
+            <span class="footer-brand__name">Denta<span>Care</span></span>
+            <span class="footer-brand__tagline">Стоматологическая клиника</span>
+          </a>
+          <p class="footer-brand__desc">Современная стоматология с заботой о каждом пациенте. Профессиональное лечение, протезирование и эстетическая стоматология в Москве с 2001 года.</p>
+          <ul class="footer-social" aria-label="Социальные сети">
+            <li>
+              <a href="#" class="footer-social__link" aria-label="ВКонтакте">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.06 13.29h-1.52c-.58 0-.76-.46-1.8-1.52-.91-.88-1.31-.99-1.53-.99-.31 0-.4.09-.4.52v1.39c0 .37-.12.59-1.1.59-1.62 0-3.41-.98-4.67-2.8C5.62 10.4 5 8.4 5 7.91c0-.22.09-.43.52-.43h1.52c.39 0 .54.18.69.61.76 2.19 2.02 4.11 2.54 4.11.2 0 .28-.09.28-.58V9.48c-.06-1.04-.61-1.13-.61-1.5 0-.18.15-.37.39-.37h2.39c.33 0 .45.18.45.55v2.97c0 .33.15.45.24.45.2 0 .37-.12.74-.49 1.14-1.28 1.96-3.24 1.96-3.24.11-.22.28-.43.67-.43h1.52c.46 0 .56.24.46.55-.19.89-2.03 3.47-2.03 3.47-.16.26-.22.37 0 .66.16.22.69.67 1.04 1.08.65.73 1.14 1.34 1.27 1.76.12.42-.09.64-.52.64z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-social__link" aria-label="Telegram">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.43 13.9l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.723.659z"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-social__link" aria-label="WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="footer-col" aria-label="Навигация по сайту">
+          <h3 class="footer-col__heading">Навигация</h3>
+          <ul class="footer-nav__list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="services.html">Услуги</a></li>
+            <li><a href="doctors.html">Врачи</a></li>
+            <li><a href="blog.html">Блог</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-col" style="font-style: normal;">
+          <h3 class="footer-col__heading">Контакты</h3>
+          <ul class="footer-contacts__list">
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>г. Москва, ул. Тверская, д. 15</span>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:info@dentacare.ru">info@dentacare.ru</a>
+            </li>
+            <li class="footer-contacts__item">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div class="footer-contacts__hours">
+                <span>Пн–Вс: 8:00 — 21:00</span>
+                <span>Без выходных</span>
+              </div>
+            </li>
+          </ul>
+        </address>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom__inner">
+          <p class="footer-bottom__copy">© 2026 DentaCare. Все права защищены.</p>
+          <ul class="footer-bottom__links">
+            <li><a href="privacy.html">Политика конфиденциальности</a></li>
+            <li><a href="license.html">Лицензии</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-disclaimer" role="note">
+      <div class="container">
+        <p>Имеются противопоказания. Необходима консультация специалиста.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "DentaCare",
+    "description": "Современная стоматологическая клиника в Москве. Лечение, протезирование, имплантация, отбеливание.",
+    "url": "https://dentacare.ru",
+    "telephone": "+74951234567",
+    "email": "info@dentacare.ru",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Тверская, д. 15",
+      "addressLocality": "Москва",
+      "addressRegion": "Москва",
+      "postalCode": "125009",
+      "addressCountry": "RU"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    ],
+    "medicalSpecialty": "Dentistry",
+    "priceRange": "$$",
+    "image": "https://dentacare.ru/assets/img/og-image.jpg",
+    "sameAs": [
+      "https://vk.com/dentacare",
+      "https://t.me/dentacare"
+    ]
+  }
+  </script>
+
+  <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Уведомление о cookies" hidden>
+    <div class="cookie-banner__inner container">
+      <div class="cookie-banner__text">
+        <strong>Мы используем cookies</strong>
+        <p>Сайт использует cookies для улучшения работы и анализа трафика.
+        Продолжая использовать сайт, вы соглашаетесь с
+        <a href="privacy.html#cookies">политикой использования cookies</a>.</p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button id="cookie-accept" class="btn-primary" type="button">Принять</button>
+        <button id="cookie-decline" class="btn-outline" type="button">Отклонить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  </script>
+
+</body>
+</html>

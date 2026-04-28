@@ -1,0 +1,411 @@
+<!-- ============================================================
+     DentaCare — Header Component
+     Подключение: скопировать <style> в styles.css (раздел Header),
+     разметку вставить в <body> каждой страницы.
+     ============================================================ -->
+
+<style>
+  /* ── Topbar ───────────────────────────────────────────────── */
+  .topbar {
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 0.875rem;
+    padding: 8px 0;
+  }
+
+  .topbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+  }
+
+  .topbar__contacts {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+  }
+
+  .topbar__contacts a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    opacity: 0.9;
+    transition: opacity var(--transition);
+  }
+
+  .topbar__contacts a:hover {
+    opacity: 1;
+  }
+
+  .topbar__contacts svg {
+    flex-shrink: 0;
+  }
+
+  .topbar__accessibility {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 4px 12px;
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: var(--radius-sm);
+    font-size: 0.8125rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+  }
+
+  .topbar__accessibility:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+
+  /* ── Main Header ──────────────────────────────────────────── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+
+  /* Logo */
+  .logo {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    flex-shrink: 0;
+  }
+
+  .logo__name {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .logo__name span {
+    color: var(--color-accent);
+  }
+
+  .logo__tagline {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    font-family: var(--font-body);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* Nav */
+  .main-nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-nav__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .main-nav__list a {
+    display: block;
+    padding: 6px 14px;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition), background var(--transition);
+    position: relative;
+  }
+
+  .main-nav__list a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform var(--transition);
+  }
+
+  .main-nav__list a:hover,
+  .main-nav__list a.active {
+    color: var(--color-primary);
+    background: var(--color-surface);
+  }
+
+  .main-nav__list a:hover::after,
+  .main-nav__list a.active::after {
+    transform: scaleX(1);
+  }
+
+  /* Header CTA */
+  .site-header__cta {
+    flex-shrink: 0;
+  }
+
+  /* ── Burger ───────────────────────────────────────────────── */
+  .burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+    flex-shrink: 0;
+  }
+
+  .burger:hover {
+    background: var(--color-surface);
+  }
+
+  .burger__line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--color-primary);
+    border-radius: 2px;
+    transition: transform var(--transition), opacity var(--transition);
+    transform-origin: center;
+  }
+
+  /* Burger → X animation */
+  .burger[aria-expanded="true"] .burger__line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .burger[aria-expanded="true"] .burger__line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .burger[aria-expanded="true"] .burger__line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ── Mobile Menu ──────────────────────────────────────────── */
+  .mobile-menu {
+    display: none;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-md) 0 var(--space-lg);
+  }
+
+  .mobile-menu.is-open {
+    display: block;
+  }
+
+  .mobile-menu__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-menu__list li a {
+    display: block;
+    padding: 12px var(--space-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+  }
+
+  .mobile-menu__list li a:hover,
+  .mobile-menu__list li a.active {
+    color: var(--color-primary);
+    border-left-color: var(--color-accent);
+    background: var(--color-surface);
+  }
+
+  .mobile-menu__cta {
+    padding: var(--space-md) var(--space-lg) 0;
+  }
+
+  .mobile-menu__cta .btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* ── Responsive ───────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .main-nav,
+    .site-header__cta {
+      display: none;
+    }
+
+    .burger {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .topbar__contacts {
+      display: none;
+    }
+    .topbar__inner {
+      justify-content: flex-end;
+    }
+    .topbar__accessibility {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      white-space: nowrap;
+    }
+  }
+
+  /* ── Visually Impaired overrides ──────────────────────────── */
+  body.visually-impaired .site-header {
+    background: #000;
+    border-bottom-color: #FFD700;
+  }
+
+  body.visually-impaired .main-nav__list a,
+  body.visually-impaired .mobile-menu__list li a {
+    color: #fff;
+  }
+
+  body.visually-impaired .main-nav__list a:hover,
+  body.visually-impaired .main-nav__list a.active,
+  body.visually-impaired .mobile-menu__list li a:hover {
+    color: #FFD700;
+    background: #111;
+  }
+
+  body.visually-impaired .mobile-menu {
+    background: #000;
+    border-top-color: #FFD700;
+  }
+</style>
+
+<!-- ── Topbar ──────────────────────────────────────────────── -->
+<div class="topbar">
+  <div class="container">
+    <div class="topbar__inner">
+
+      <div class="topbar__contacts">
+        <a href="#" class="topbar__address">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          ул. Пушкина, 12, Москва
+        </a>
+        <a href="tel:+74951234567">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          +7 (495) 123-45-67
+        </a>
+      </div>
+
+      <button
+        id="accessibility-toggle"
+        class="topbar__accessibility"
+        type="button"
+        aria-pressed="false"
+        aria-label="Включить версию для слабовидящих"
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M2 12S5 5 12 5s10 7 10 7-3 7-10 7S2 12 2 12z"/>
+        </svg>
+        Версия для слабовидящих
+      </button>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Header ─────────────────────────────────────────── -->
+<header class="site-header" role="banner">
+  <div class="container">
+    <div class="site-header__inner">
+
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="DentaCare — на главную">
+        <span class="logo__name">Denta<span>Care</span></span>
+        <span class="logo__tagline">Стоматологическая клиника</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Основная навигация">
+        <ul class="main-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="doctors.html">Врачи</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA + Burger -->
+      <div class="site-header__cta">
+        <a href="contacts.html" class="btn-primary">Записаться</a>
+      </div>
+
+      <button
+        class="burger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+        aria-label="Открыть меню"
+      >
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Мобильная навигация" hidden>
+    <div class="container">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="services.html">Услуги</a></li>
+        <li><a href="doctors.html">Врачи</a></li>
+        <li><a href="blog.html">Блог</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+      <div class="mobile-menu__cta">
+        <a href="contacts.html" class="btn-primary">Записаться на приём</a>
+      </div>
+    </div>
+  </nav>
+
+</header>

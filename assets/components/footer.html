@@ -1,0 +1,411 @@
+<!-- ============================================================
+     DentaCare — Footer Component
+     Подключение: скопировать <style> в styles.css (раздел Footer),
+     разметку вставить перед закрывающим </body> каждой страницы.
+     ============================================================ -->
+
+<style>
+  /* ── Footer ───────────────────────────────────────────────── */
+  .site-footer {
+    background: var(--color-primary);
+    color: rgba(255, 255, 255, 0.85);
+    padding: var(--space-4xl) 0 0;
+    margin-top: auto;
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.3fr;
+    gap: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* ── Column shared ────────────────────────────────────────── */
+  .footer-col__heading {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: var(--space-lg);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* ── Column 1: Brand ──────────────────────────────────────── */
+  .footer-brand__logo {
+    display: inline-flex;
+    flex-direction: column;
+    text-decoration: none;
+    line-height: 1.15;
+    margin-bottom: var(--space-md);
+  }
+
+  .footer-brand__name {
+    font-family: var(--font-display);
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .footer-brand__name span {
+    color: var(--color-accent);
+  }
+
+  .footer-brand__tagline {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.55);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .footer-brand__desc {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: var(--space-lg);
+    max-width: 300px;
+  }
+
+  /* Social icons */
+  .footer-social {
+    display: flex;
+    gap: var(--space-sm);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-social__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: background var(--transition), color var(--transition), transform var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .footer-social__link:hover {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+
+  /* ── Column 2: Nav ────────────────────────────────────────── */
+  .footer-nav__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .footer-nav__list a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 6px 0;
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color var(--transition), gap var(--transition);
+  }
+
+  .footer-nav__list a::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    flex-shrink: 0;
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+
+  .footer-nav__list a:hover {
+    color: #fff;
+    gap: var(--space-md);
+  }
+
+  .footer-nav__list a:hover::before {
+    opacity: 1;
+  }
+
+  /* ── Column 3: Contacts ───────────────────────────────────── */
+  .footer-contacts__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .footer-contacts__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    font-size: 0.9375rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+  }
+
+  .footer-contacts__item svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-accent);
+  }
+
+  .footer-contacts__item a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .footer-contacts__item a:hover {
+    color: #fff;
+  }
+
+  .footer-contacts__hours {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .footer-contacts__hours span:first-child {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* ── Bottom Bar ───────────────────────────────────────────── */
+  .footer-bottom {
+    padding: var(--space-lg) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .footer-bottom__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .footer-bottom__copy {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .footer-bottom__links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-bottom__links a {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .footer-bottom__links a:hover {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  /* ── Disclaimer ───────────────────────────────────────────── */
+  .footer-disclaimer {
+    background: rgba(0, 0, 0, 0.2);
+    padding: var(--space-md) 0;
+    text-align: center;
+  }
+
+  .footer-disclaimer p {
+    font-size: 0.8125rem;
+    color: rgba(255, 255, 255, 0.4);
+    line-height: 1.5;
+  }
+
+  /* ── Responsive ───────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .site-footer__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .footer-col--brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .site-footer {
+      padding-top: var(--space-3xl);
+    }
+
+    .site-footer__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+    }
+
+    .footer-col--brand {
+      grid-column: auto;
+    }
+
+    .footer-bottom__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-bottom__links {
+      flex-wrap: wrap;
+      gap: var(--space-md);
+    }
+  }
+
+  /* ── Visually Impaired overrides ──────────────────────────── */
+  body.visually-impaired .site-footer {
+    background: #000;
+    border-top: 2px solid #FFD700;
+  }
+
+  body.visually-impaired .footer-bottom {
+    border-top-color: rgba(255, 215, 0, 0.3);
+  }
+
+  body.visually-impaired .footer-disclaimer {
+    background: #111;
+  }
+
+  body.visually-impaired .footer-social__link:hover {
+    background: #FFD700;
+    color: #000;
+    border-color: #FFD700;
+  }
+</style>
+
+<!-- ── Footer ─────────────────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+
+  <div class="container">
+    <div class="site-footer__grid">
+
+      <!-- Column 1: Brand -->
+      <div class="footer-col footer-col--brand">
+        <a href="index.html" class="footer-brand__logo" aria-label="DentaCare — на главную">
+          <span class="footer-brand__name">Denta<span>Care</span></span>
+          <span class="footer-brand__tagline">Стоматологическая клиника</span>
+        </a>
+        <p class="footer-brand__desc">
+          Современная стоматология с заботой о каждом пациенте. Профессиональное лечение, протезирование и эстетическая стоматология в Москве с 2010 года.
+        </p>
+        <ul class="footer-social" aria-label="Социальные сети">
+          <li>
+            <a href="#" class="footer-social__link" aria-label="ВКонтакте">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.06 13.29h-1.52c-.58 0-.76-.46-1.8-1.52-.91-.88-1.31-.99-1.53-.99-.31 0-.4.09-.4.52v1.39c0 .37-.12.59-1.1.59-1.62 0-3.41-.98-4.67-2.8C5.62 10.4 5 8.4 5 7.91c0-.22.09-.43.52-.43h1.52c.39 0 .54.18.69.61.76 2.19 2.02 4.11 2.54 4.11.2 0 .28-.09.28-.58V9.48c-.06-1.04-.61-1.13-.61-1.5 0-.18.15-.37.39-.37h2.39c.33 0 .45.18.45.55v2.97c0 .33.15.45.24.45.2 0 .37-.12.74-.49 1.14-1.28 1.96-3.24 1.96-3.24.11-.22.28-.43.67-.43h1.52c.46 0 .56.24.46.55-.19.89-2.03 3.47-2.03 3.47-.16.26-.22.37 0 .66.16.22.69.67 1.04 1.08.65.73 1.14 1.34 1.27 1.76.12.42-.09.64-.52.64z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-social__link" aria-label="Telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L7.43 13.9l-2.965-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.723.659z"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-social__link" aria-label="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <nav class="footer-col" aria-label="Навигация по сайту">
+        <h3 class="footer-col__heading">Навигация</h3>
+        <ul class="footer-nav__list">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="doctors.html">Врачи</a></li>
+          <li><a href="blog.html">Блог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Contacts -->
+      <address class="footer-col" style="font-style: normal;">
+        <h3 class="footer-col__heading">Контакты</h3>
+        <ul class="footer-contacts__list">
+          <li class="footer-contacts__item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>ул. Пушкина, д. 12,<br>Москва, 101000</span>
+          </li>
+          <li class="footer-contacts__item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.44 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+          </li>
+          <li class="footer-contacts__item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a href="mailto:info@dentacare.ru">info@dentacare.ru</a>
+          </li>
+          <li class="footer-contacts__item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <div class="footer-contacts__hours">
+              <span>Пн–Пт: 9:00 — 20:00</span>
+              <span>Сб: 10:00 — 18:00</span>
+              <span>Вс: выходной</span>
+            </div>
+          </li>
+        </ul>
+      </address>
+
+    </div><!-- /.site-footer__grid -->
+  </div><!-- /.container -->
+
+  <!-- Bottom Bar -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom__inner">
+        <p class="footer-bottom__copy">© 2024 DentaCare. Все права защищены.</p>
+        <ul class="footer-bottom__links">
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Лицензии</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="footer-disclaimer" role="note">
+    <div class="container">
+      <p>Имеются противопоказания. Необходима консультация специалиста.</p>
+    </div>
+  </div>
+
+</footer>
